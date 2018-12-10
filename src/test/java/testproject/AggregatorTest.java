@@ -29,10 +29,11 @@ public class AggregatorTest {
     }
 	
 	@Test
-    public void testMultipleAdditions() {
+    public void testReset() {
         Aggregator agr = new Aggregator();
         double val = 15;
 		agr.addValue(val);
+		assertThat(agr.getSum()).isEqualTo(val);
 		agr.reset();
         assertThat(agr.getSum()).isEqualTo(0);
     }
